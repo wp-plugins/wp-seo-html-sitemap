@@ -12,21 +12,25 @@ A responsive HTML sitemap shortcode that uses all of the settings for your XML s
 
 == Description ==
 
-If you use *WordPress SEO by Yoast Plugin* as your main SEO plugin, you may have noticed they don't have a HTML sitemap feature. This plugin is the answer to that problem.
+If you use **WordPress SEO by Yoast Plugin** as your main SEO plugin, you may have noticed they don't have a HTML sitemap feature. This plugin is the answer to that problem.
 
+[youtube https://www.youtube.com/watch?v=hi5DGOu1uA0]
+
+= Matt Cutts on HTML Sitemaps =
 When Matt Cutts (Head of Google's Webspam Team) was asked, what is more important: "A XML sitemap or an HTML sitemap?" [YouTube Webmaster Tools Video](https://www.youtube.com/watch?v=hi5DGOu1uA0) Matt answered a HTML sitemap. HTML sitemaps help both users and search engine crawlers. ["It is always useful to have a HTML sitemap..."](https://www.youtube.com/watch?v=t5LIlkhxl2s).
 
+= How to use this Plugin =
 Use the shortcode: [wpseo_html_sitemap]
 
 Want to see the plugin in action? [Live HTML Sitemap Example](https://riseofweb.com/sitemap/).
 
 Note: The [WordPress SEO by Yoast plugin](https://wordpress.org/plugins/wordpress-seo/) is NOT required in order to use this plugin. But this plugin does take full advantage of all settings related to the XML sitemap settings.
 
-Known oversights to address in future versions:
+= Known oversights to address in future versions: =
 * Author Roles filtering, I do not have the it setup to be able to filter out author roles.
 * The posts are sorted by name and may not show if a specific Category is selected to not show in the sitemap XML.
 
-Possible Future Version Features To Add (or possibly to a premium version of the plugin):
+= Possible Future Version Features To Add (or possibly to a premium version of the plugin): =
 * Backend interface with settings
 * Custom CSS editing
 * Style templates to choose from
