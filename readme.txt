@@ -4,23 +4,30 @@ Donate link: http://riseofweb.com/
 Tags: WPSEO, Yoast SEO, HTML Sitemap, Sitemap, Google Sitemap, Google Webmaster tools, sitemaps, nofollow, wordpress seo, wordpress seo by yoast, yoast, seo
 Requires at least: 3.5
 Tested up to: 4.2
-Stable tag: 0.5
+Stable tag: 0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A responsive HTML sitemap shortcode that uses all of the settings for your XML sitemap in the WordPress SEO by Yoast Plugin.
+A responsive HTML sitemap that uses all of the settings for your XML sitemap in the WordPress SEO by Yoast Plugin.
 
 == Description ==
 
 If you use **WordPress SEO by Yoast Plugin** as your main SEO plugin, you may have noticed they don't have a HTML sitemap feature. This plugin is the answer to that problem.
 
+= Features Include =
+* Automatically uses all sitemap xml settings from the popular Wordpress SEO by Yoast Plugin
+* Choose how many columns you want to display
+* Columns have a masonry effect and is compatible with all modern browsers
+* Overwrite, prepend, append, and shortcode options for placement on your sitemap page
+* Fully responsive HTML to all devices
+* HTML code has passed W3C Markup Validation with 0 errors
+* Ability to disable the plugin's CSS
+* Optional link to your sitemap_index.xml file
+
 [youtube https://www.youtube.com/watch?v=hi5DGOu1uA0]
 
 = Matt Cutts on HTML Sitemaps =
 When Matt Cutts (Head of Google's Webspam Team) was asked, what is more important: "A XML sitemap or an HTML sitemap?" [YouTube Webmaster Tools Video](https://www.youtube.com/watch?v=hi5DGOu1uA0) Matt answered a HTML sitemap. HTML sitemaps help both users and search engine crawlers. ["It is always useful to have a HTML sitemap..."](https://www.youtube.com/watch?v=t5LIlkhxl2s).
-
-= How to use this Plugin =
-Use the shortcode: [wpseo_html_sitemap]
 
 Want to see the plugin in action? [Live HTML Sitemap Example](https://riseofweb.com/sitemap/).
 
@@ -30,12 +37,10 @@ Note: The [WordPress SEO by Yoast plugin](https://wordpress.org/plugins/wordpres
 * Author Roles filtering, I do not have the it setup to be able to filter out author roles.
 * The posts are sorted by name and may not show if a specific Category is selected to not show in the sitemap XML.
 
-= Possible Future Version Features To Add (or possibly to a premium version of the plugin): =
-* Backend interface with settings
-* Custom CSS editing
+= Possible Future Version Features to Add to a Premium version of this plugin: =
 * Style templates to choose from
-* Adding more than 2 columns
-* Custom Header names
+* Custom header names
+* Section ordering
 * Adding custom URLs
 
 == Installation ==
@@ -46,7 +51,7 @@ Note: The [WordPress SEO by Yoast plugin](https://wordpress.org/plugins/wordpres
 == Frequently Asked Questions ==
 
 = Is the page responsive? =
-Yes.
+Yes. The columns option can be set and change size automatically. For mobile phones the columns are automatically set to 1.
 
 = Can I change the CSS? =
 Yes, the CSS is prefixed by the div id "#wpseo_sitemap". If you want to override any of the CSS just use the ">" example "#wpseo_sitemap > div > h3{}
@@ -56,9 +61,15 @@ Yes, but it is optimized for Yoast's WordPress SEO.  This plugin uses all settin
 
 == Screenshots ==
 
-1. This is a screenshot of the HTML sitemap shortcode in action
+1. This is a screenshot of the HTML sitemap in action
+
+2. This is a screenshot of the admin options page
 
 == Changelog ==
 
+= 0.9 =
+* Major Update: added admin user interface, added an external CSS file (for proper HTML page validation), added columns number setting, added link to sitemap XML option, fixed some errors relating to category checking.
+
+
 = 0.5 =
-* Inital Release
+* Initial Release
