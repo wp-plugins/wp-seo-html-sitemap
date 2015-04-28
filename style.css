@@ -29,5 +29,5 @@ DO NOT EDIT THIS CSS FILE !! If you want to edit this, copy it and then disable 
 	#wpseo_sitemap.columns_3,#wpseo_sitemap.columns_4{-moz-column-count: 2 !important; -webkit-column-count: 2 !important; column-count: 2 !important;}
 }
 @media screen and (max-width:480px){
-	#wpseo_sitemap{-moz-column-count: 1 !important; -webkit-column-count: 1 !important; column-count: 1 !important;}
+	#wpseo_sitemap.columns_4,#wpseo_sitemap.columns_3,#wpseo_sitemap.columns_2{-moz-column-count: 1 !important; -webkit-column-count: 1 !important; column-count: 1 !important;}
 }

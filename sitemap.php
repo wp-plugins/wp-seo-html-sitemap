@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP SEO HTML Sitemap
-Version: 0.9.1
+Version: 0.9.2
 Plugin URI: http://riseofweb.com
 Description: A responsive HTML sitemap that uses all of the settings for your XML sitemap in the WordPress SEO by Yoast Plugin.
 Author: Daniel Chase
