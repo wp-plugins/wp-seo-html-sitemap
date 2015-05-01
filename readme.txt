@@ -4,7 +4,7 @@ Donate link: http://riseofweb.com/
 Tags: WPSEO, Yoast SEO, HTML Sitemap, Sitemap, Google Sitemap, Google Webmaster tools, sitemaps, nofollow, wordpress seo, wordpress seo by yoast, yoast, seo
 Requires at least: 3.5
 Tested up to: 4.2
-Stable tag: 0.9.2
+Stable tag: 0.9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -66,6 +66,9 @@ Yes, but it is optimized for Yoast's WordPress SEO.  This plugin uses all settin
 2. This is a screenshot of the admin options page
 
 == Changelog ==
+= 0.9.3 =
+* Added the rel="alternate" to the sitemap XML link. Fixed a broken link on the plugins page (Thanks to dimatrovski for finding the error). Fixed link to Posts going to sitemap page (Thanks to Rob Eitzen for finding the error).
+
 = 0.9.2 =
 * Fixed CSS errors related to responsive. Thanks to anpaostudio for finding the errors.
 

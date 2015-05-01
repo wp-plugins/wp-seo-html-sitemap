@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP SEO HTML Sitemap
-Version: 0.9.2
+Version: 0.9.3
 Plugin URI: http://riseofweb.com
 Description: A responsive HTML sitemap that uses all of the settings for your XML sitemap in the WordPress SEO by Yoast Plugin.
 Author: Daniel Chase
@@ -51,7 +51,7 @@ function wpseo_sitemap_create_menu() {
 // add settings link to plugins page
 function wpseo_sitemap_create_settings_link($action_links,$plugin_file){
 	if($plugin_file==plugin_basename(__FILE__)){
-		$wcu_settings_link = '<a href="options-general.php?page=' . dirname(plugin_basename(__FILE__)) . '">' . __("HTML Sitemap Settings") . '</a>';
+		$wcu_settings_link = '<a href="options-general.php?page=wpseo-html-sitemap">' . __("HTML Sitemap Settings") . '</a>';
 		array_unshift($action_links,$wcu_settings_link);
 	}
 	return $action_links;
@@ -111,7 +111,7 @@ function wpseo_sitemap_settings_page() {
 			}
 			?>
 		</select>
-		<br /><br /><small>What Page is your Sitemap placed on?</small>
+		<br /><br /><small>What Page is your Sitemap placed on?<?php if($options['pageID'] !== ''){ echo ' <a href="'.get_permalink( $options['pageID'] ).'">Link to your sitemap page</a>'; } ?></small>
 		</td>
 		</tr>
         <tr valign="top">
@@ -270,8 +270,13 @@ if ( !function_exists( 'wpseo_sitemap_shortcode' ) ) {
 		}else{
 			$postsURL = bloginfo('url');
 		}
-		$goHtm .= '<div id="sitemap_posts"><h3><a href="'.  $postsURL .'">Posts</a></h3>
-		<ul>';
+		$goHtm .= '<div id="sitemap_posts"><h3>';
+		if ( $postsURL !== '' && $postsURL !== get_permalink($options['pageID']) ){
+			$goHtm .= '<a href="'.  $postsURL .'">Posts</a>';
+		}else{
+			$goHtm .= 'Posts';
+		}	
+		$goHtm .= '</h3><ul>';
 		//Categories
 		$cateEx = '';
 		$getCate = get_option('wpseo_taxonomy_meta');
@@ -350,7 +355,7 @@ if ( !function_exists( 'wpseo_sitemap_shortcode' ) ) {
 	// ==============================================================================
 	// Link To Sitemap
 	if($options['xml-link'] == 'yes'){
-		$goHtm .= '<div id="sitemap_xml"><h3><a href="'.site_url().'/sitemap_index.xml" target="_blank">Sitemap XML</a></h3></div>';
+		$goHtm .= '<div id="sitemap_xml"><h3><a rel="alternate" href="'.site_url().'/sitemap_index.xml" target="_blank">Sitemap XML</a></h3></div>';
 	}
 
 	// ==============================================================================
