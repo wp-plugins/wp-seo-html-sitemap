@@ -1,6 +1,6 @@
 === WP SEO HTML Sitemap ===
 Contributors: riseofweb
-Donate link: http://riseofweb.com/
+Donate link: https://riseofweb.com/wordpress/
 Tags: WPSEO, Yoast SEO, HTML Sitemap, Sitemap, Google Sitemap, Google Webmaster tools, sitemaps, nofollow, wordpress seo, wordpress seo by yoast, yoast, seo
 Requires at least: 3.5
 Tested up to: 4.2
