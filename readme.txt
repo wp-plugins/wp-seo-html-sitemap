@@ -34,8 +34,8 @@ Want to see the plugin in action? [Live HTML Sitemap Example](https://riseofweb.
 Note: The [WordPress SEO by Yoast plugin](https://wordpress.org/plugins/wordpress-seo/) is NOT required in order to use this plugin. But this plugin does take full advantage of all settings related to the XML sitemap settings.
 
 = Known oversights to address in future versions: =
-* Author Roles filtering, I do not have the it setup to be able to filter out author roles.
-* The posts are sorted by name and may not show if a specific Category is selected to not show in the sitemap XML.
+* Author Roles filtering, I do not have it setup to be able to filter out author roles.
+* The posts are sorted by name and may not show if a specific Category is selected to not show in the sitemap XML settings in Yoast.
 
 = Possible Future Version Features to Add to a Premium version of this plugin: =
 * Style templates to choose from
