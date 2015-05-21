@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP SEO HTML Sitemap
-Version: 0.9.3
+Version: 0.9.4
 Plugin URI: http://riseofweb.com
 Description: A responsive HTML sitemap that uses all of the settings for your XML sitemap in the WordPress SEO by Yoast Plugin.
 Author: Daniel Chase
@@ -221,7 +221,7 @@ if ( !function_exists( 'wpseo_sitemap_shortcode' ) ) {
 		echo '<link rel="stylesheet" type="text/css" href="'.plugin_dir_url( __FILE__ ) . 'style.css" media="screen" />';
 	}
 	
-	$goHtm .= '<div id="wpseo_sitemap" class="columns_'.$options['columns'].'">';
+	$goHtm .= '<!-- WP SEO HTML Sitemap Plugin Start --><div id="wpseo_sitemap" class="columns_'.$options['columns'].'">';
 
 	// ==============================================================================
 	// Authors
@@ -236,11 +236,10 @@ if ( !function_exists( 'wpseo_sitemap_shortcode' ) ) {
 
 	// ==============================================================================
 	// Pages
-	$pageCheck = get_pages();
+	$pageCheck = get_pages(array( 'exclude' => $options['pageID'] ));
 	if ( ( !empty( $pageCheck ) ) && $checkOptions['post_types-page-not_in_sitemap'] !== true ){
 		$goHtm .= '<div id="sitemap_pages"><h3>Pages</h3>
 		<ul>';
-		// Add pages you'd like to exclude in the exclude here
 		$pageInc = '';
 		$getPages = get_all_page_ids();
 		foreach( $getPages as $pageID ) {
@@ -265,16 +264,18 @@ if ( !function_exists( 'wpseo_sitemap_shortcode' ) ) {
 	// Posts
 	$postsTest = get_posts();
 	if ( ( !empty( $postsTest ) ) && $checkOptions['post_types-post-not_in_sitemap'] !== true ){
+		$postTitle = 'Posts';
 		if( get_option( 'show_on_front' ) == 'page' ){
 			$postsURL = get_permalink( get_option('page_for_posts') );
+			$postTitle = get_the_title( get_option('page_for_posts') );
 		}else{
-			$postsURL = bloginfo('url');
+			$postsURL = get_bloginfo('url');
 		}
 		$goHtm .= '<div id="sitemap_posts"><h3>';
 		if ( $postsURL !== '' && $postsURL !== get_permalink($options['pageID']) ){
-			$goHtm .= '<a href="'.  $postsURL .'">Posts</a>';
+			$goHtm .= '<a href="'.  $postsURL .'">'. $postTitle .'</a>';
 		}else{
-			$goHtm .= 'Posts';
+			$goHtm .= $postTitle;
 		}	
 		$goHtm .= '</h3><ul>';
 		//Categories
@@ -364,7 +365,7 @@ if ( !function_exists( 'wpseo_sitemap_shortcode' ) ) {
 		$goHtm .= '<div id="credits_link">Sitemap by <a href="https://riseofweb.com/" target="_blank">Rise of the Web</a></div>';
 	}
 	
-	$goHtm .= '<div class="wpseo_clearRow"></div></div>';
+	$goHtm .= '<div class="wpseo_clearRow"></div></div><!-- WP SEO HTML Sitemap Plugin END -->';
 
 	return $goHtm;
 	}
