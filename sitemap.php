@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP SEO HTML Sitemap
-Version: 0.9.4
+Version: 0.9.5
 Plugin URI: http://riseofweb.com
 Description: A responsive HTML sitemap that uses all of the settings for your XML sitemap in the WordPress SEO by Yoast Plugin.
 Author: Daniel Chase
@@ -226,7 +226,7 @@ if ( !function_exists( 'wpseo_sitemap_shortcode' ) ) {
 	// ==============================================================================
 	// Authors
 	if ($checkOptions['disable_author_sitemap'] !== true ){
-		$goHtm .= '<div id="sitemap_authors"><h3>Authors</h3>
+		$goHtm .= '<div id="sitemap_authors"><h3>'. __('Authors') .'</h3>
 		<ul>';
 
 		$authEx = implode (", ", get_users( 'orderby=nicename&meta_key=wpseo_excludeauthorsitemap&meta_value=on') );
@@ -238,7 +238,9 @@ if ( !function_exists( 'wpseo_sitemap_shortcode' ) ) {
 	// Pages
 	$pageCheck = get_pages(array( 'exclude' => $options['pageID'] ));
 	if ( ( !empty( $pageCheck ) ) && $checkOptions['post_types-page-not_in_sitemap'] !== true ){
-		$goHtm .= '<div id="sitemap_pages"><h3>Pages</h3>
+		$pageTitle = get_post_type_object( 'page' );
+		$pageTitle = $pageTitle->label;
+		$goHtm .= '<div id="sitemap_pages"><h3>'.$pageTitle.'</h3>
 		<ul>';
 		$pageInc = '';
 		$getPages = get_all_page_ids();
@@ -264,7 +266,8 @@ if ( !function_exists( 'wpseo_sitemap_shortcode' ) ) {
 	// Posts
 	$postsTest = get_posts();
 	if ( ( !empty( $postsTest ) ) && $checkOptions['post_types-post-not_in_sitemap'] !== true ){
-		$postTitle = 'Posts';
+		$postTitle = get_post_type_object( 'post' );
+		$postTitle = $postTitle->label;
 		if( get_option( 'show_on_front' ) == 'page' ){
 			$postsURL = get_permalink( get_option('page_for_posts') );
 			$postTitle = get_the_title( get_option('page_for_posts') );
@@ -281,7 +284,7 @@ if ( !function_exists( 'wpseo_sitemap_shortcode' ) ) {
 		//Categories
 		$cateEx = '';
 		$getCate = get_option('wpseo_taxonomy_meta');
-		if( !empty($getCate) ){
+		if( !empty($getCate['category']) ){
 			foreach( $getCate['category'] as $cateID => $item ) {
 				if( ( $item['wpseo_noindex'] == 'noindex' ) || ( $item['wpseo_sitemap_include'] == 'never' ) ){
 					if( $cateEx == '' ) {

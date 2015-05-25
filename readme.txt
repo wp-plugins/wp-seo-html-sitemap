@@ -4,7 +4,7 @@ Donate link: https://riseofweb.com/wordpress/
 Tags: WPSEO, Yoast SEO, HTML Sitemap, Sitemap, Google Sitemap, Google Webmaster tools, sitemaps, nofollow, wordpress seo, wordpress seo by yoast, yoast, seo
 Requires at least: 3.5
 Tested up to: 4.2
-Stable tag: 0.9.4
+Stable tag: 0.9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,6 +20,7 @@ If you use **WordPress SEO by Yoast Plugin** as your main SEO plugin, you may ha
 * Columns have a masonry effect and is compatible with all modern browsers
 * Overwrite, prepend, append, and shortcode options for placement on your sitemap page
 * Fully responsive HTML to all devices
+* Output is multilingual friendly
 * HTML code has passed W3C Markup Validation with 0 errors
 * Ability to disable the plugin's CSS
 * Optional link to your sitemap_index.xml file
@@ -66,6 +67,10 @@ Yes, but it is optimized for Yoast's WordPress SEO.  This plugin uses all settin
 2. This is a screenshot of the admin options page
 
 == Changelog ==
+= 0.9.5 =
+* BUGS FIXED: Error when checking Yoast Plugin for Categories to exclude
+* NEW FEATURE: Changed plugin output to now be multilingual friendly
+
 = 0.9.4 =
 * BUGS FIXED: Fixed link appearing on top of sitemap html if no blog page is set. (Thanks to muradabuseta and Adam B. for finding the error)
 * NEW FEATURE: Changed the heading text for the Posts to be the page name selected to show the Posts.
